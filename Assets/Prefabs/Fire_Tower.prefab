@@ -260,9 +260,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67bf25eff8648ca40b34f4acf3e1271b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 5
-  firerate: 1
-  bulletPrefab: {fileID: 1688112670784382, guid: d52f6be779891eb419bf678980549392,
+  range: 10
+  firerate: 0.5
+  bulletPrefab: {fileID: 1688112670784382, guid: 813a244018048c2478da151378b605c8,
     type: 2}
   firePoint: {fileID: 4811356587704270}
   enemyTag: Enemy

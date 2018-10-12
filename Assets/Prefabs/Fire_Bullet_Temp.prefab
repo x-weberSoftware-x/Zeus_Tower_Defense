@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 135877724173901048}
   - component: {fileID: 114913055706526530}
   m_Layer: 0
-  m_Name: Lightning_Bullet_Temp
+  m_Name: Fire_Bullet_Temp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58,7 +58,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: ea1368d12b61f6047a750d8e7ff02e92, type: 2}
+  - {fileID: 2100000, guid: 9229c85a6103a5c41b98e50ef1bdaaf2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -96,8 +96,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 959529076b607f644b5ac5327307a55f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 50
-  speed: 30
+  damage: 100
+  speed: 10
 --- !u!135 &135877724173901048
 SphereCollider:
   m_ObjectHideFlags: 1

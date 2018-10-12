@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour 
 {
+    public int damage = 50;
     private Transform target;
 
     public float speed = 50f;
@@ -12,6 +13,8 @@ public class Bullet : MonoBehaviour
     {
         target = _target;
     }
+
+    
 
 	void Update () 
 	{
@@ -34,8 +37,8 @@ public class Bullet : MonoBehaviour
 
     void HitEnemy()
     {
-        PlayerStats.souls += 10;
-        Destroy(target.gameObject);
+        Enemy enemy = target.GetComponent<Enemy>();
+        enemy.TakeDamage(damage);
         Destroy(gameObject);
     }
 }
