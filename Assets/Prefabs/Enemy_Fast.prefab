@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 136196466047335088}
   - component: {fileID: 114114485755164536}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Enemy_Fast
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,7 +111,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 2cab3df8999a9694098ce0fc0d82ef5e, type: 2}
+  - {fileID: 2100000, guid: e569cf01392f39348ba0ae1d5613ad21, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -152,8 +152,8 @@ MonoBehaviour:
   healthBar: {fileID: 114262495668339314}
   health: 100
   currentHealth: 0
-  soulsValue: 10
-  speed: 3
+  soulsValue: 20
+  speed: 6
   turningDistance: 0.3
 --- !u!114 &114227824561213260
 MonoBehaviour:

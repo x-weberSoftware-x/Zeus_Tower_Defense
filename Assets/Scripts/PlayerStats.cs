@@ -8,8 +8,10 @@ public class PlayerStats : MonoBehaviour
 {
     public static int souls;
     public static int worshippers;
+
     public int startSouls = 500;
     public int startWorshippers = 10;
+
     public Text soulsText;
     public Text worshippersText;
     public GameObject gameOver;
@@ -18,8 +20,10 @@ public class PlayerStats : MonoBehaviour
     {
         Time.timeScale = 1;
         gameOver.SetActive(false);
+
         souls = startSouls;
         worshippers = startWorshippers;
+
         worshippersText.text = worshippers.ToString();
         soulsText.text = souls.ToString();
     }
@@ -30,6 +34,7 @@ public class PlayerStats : MonoBehaviour
         {
             GameOver();
         }
+
         worshippersText.text = worshippers.ToString();
         soulsText.text = souls.ToString();
     }

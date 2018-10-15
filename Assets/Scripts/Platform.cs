@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Platform : MonoBehaviour 
 {
@@ -25,14 +26,19 @@ public class Platform : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if(!buildManager.CanBuild)
+        if(EventSystem.current.IsPointerOverGameObject())
         {
             return;
         }
 
         if (currentTower != null)
         {
-            Debug.Log("Cant Build Here - TODO display on screen");
+            buildManager.SelectPlatform(this);
+            return;
+        }
+
+        if(!buildManager.CanBuild)
+        {
             return;
         }
 
@@ -41,6 +47,11 @@ public class Platform : MonoBehaviour
 
     private void OnMouseEnter()
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
+
         if (!buildManager.CanBuild)
         {
             return;

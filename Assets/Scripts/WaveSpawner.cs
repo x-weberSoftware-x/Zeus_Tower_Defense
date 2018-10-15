@@ -1,12 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WaveSpawner : MonoBehaviour 
 {
-    public Transform enemyPrefab;
+    public Text waveCountdownText;
+    public GameObject waveCountdownUI;
+    private int bossCount = 0;
+
+    public static int EnemiesAlive = 0;
+
+    public Wave[] waves;
+
     public Transform spawnPoint;
-    public float spawnRate = .5f;
 
     public float timeBetweenWaves = 5f;
     private float countdown = 2f;
@@ -15,28 +22,63 @@ public class WaveSpawner : MonoBehaviour
 
 	void Update () 
 	{
+        if (EnemiesAlive > 0)
+        {
+            waveCountdownUI.SetActive(false);
+            return;
+        }
+
 		if(countdown <= 0)
         {
-           StartCoroutine(SpawnWave());
+            StartCoroutine(SpawnWave());
             countdown = timeBetweenWaves;
         }
 
+        waveCountdownUI.SetActive(true);
+        waveCountdownText.text = string.Format("{0:00.00}", countdown);
         countdown -= Time.deltaTime;
     }
 
     IEnumerator SpawnWave()
     {
-        waveIndex++;
+        Wave wave = waves[waveIndex];
   
-        for (int i = 0; i < waveIndex; i++)
+        for (int i = 0; i < wave.count; i++)
         {
-            SpawnEnemy();
-            yield return new WaitForSeconds(spawnRate);
+            SpawnEnemy(wave.enemies);
+
+            if (wave.boss != null && bossCount < 1)
+            {
+                bossCount++;
+                StartCoroutine(SpawnBoss(wave.boss, wave.bossSpawnTime));
+            }
+
+            yield return new WaitForSeconds(1f / wave.rate);
+        }
+
+        waveIndex++;
+
+        if(waveIndex == waves.Length)
+        {
+            Debug.Log("LEVEL WON!!");
+            this.enabled = false;
         }
     }
 
-    void SpawnEnemy()
+    void SpawnEnemy(GameObject[] enemies)
     {
-        Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
+
+        foreach (GameObject enemy in enemies)
+        {
+            Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
+            EnemiesAlive++;
+        }       
+    }
+
+    IEnumerator SpawnBoss(GameObject boss, float spawnRate)
+    {
+        yield return new WaitForSeconds(spawnRate);
+        Debug.Log("Boss Spawned");
+        Instantiate(boss, spawnPoint.position, spawnPoint.rotation);
     }
 }

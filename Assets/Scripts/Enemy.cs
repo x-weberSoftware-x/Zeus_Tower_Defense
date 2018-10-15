@@ -27,6 +27,8 @@ public class Enemy : MonoBehaviour
         {
             PlayerStats.souls += soulsValue;
             Destroy(gameObject);
+
+            WaveSpawner.EnemiesAlive--;
         }
     }
 

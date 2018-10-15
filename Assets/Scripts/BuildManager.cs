@@ -24,12 +24,38 @@ public class BuildManager : MonoBehaviour
 
 
     private TowerBlueprint towerToBuild;
+    private Platform selectedPlatform;
+
+    public PlatformUI platformUI;
 
     public bool CanBuild { get { return towerToBuild != null; } }
+
+    public void SelectPlatform(Platform platform)
+    {
+        if(selectedPlatform == platform)
+        {
+            DeselectPlatform();
+            return;
+        }
+        selectedPlatform = platform;
+        towerToBuild = null;
+
+        platformUI.SetTarget(platform);
+
+    }
+
+    public void DeselectPlatform()
+    {
+        selectedPlatform = null;
+        platformUI.Hide();
+    }
 
     public void SelectTowerToBuild(TowerBlueprint tower)
     {
         towerToBuild = tower;
+        selectedPlatform = null;
+
+        platformUI.Hide();
     }
 
     public void BuildTowerOn(Platform platform)
@@ -44,4 +70,5 @@ public class BuildManager : MonoBehaviour
         GameObject tower = Instantiate(towerToBuild.towerPrefab, platform.transform.position, platform.transform.rotation);
         platform.currentTower = tower;
     }
+
 }
