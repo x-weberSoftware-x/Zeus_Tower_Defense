@@ -58,17 +58,8 @@ public class BuildManager : MonoBehaviour
         platformUI.Hide();
     }
 
-    public void BuildTowerOn(Platform platform)
+    public TowerBlueprint GetTowerToBuild()
     {
-        if(PlayerStats.souls < towerToBuild.cost)
-        {
-            return;
-        }
-
-        PlayerStats.souls -= towerToBuild.cost;
-
-        GameObject tower = Instantiate(towerToBuild.towerPrefab, platform.transform.position, platform.transform.rotation);
-        platform.currentTower = tower;
+        return towerToBuild;
     }
-
 }

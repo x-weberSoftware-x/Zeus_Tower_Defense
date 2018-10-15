@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 4869126005472630}
   - component: {fileID: 114472873141491774}
   m_Layer: 0
-  m_Name: Fire_Tower
+  m_Name: Fire_Tower_Upgraded
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -112,7 +112,7 @@ Transform:
   m_GameObject: {fileID: 1493246159445886}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.508, y: 0, z: -1.5}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4965940129011070}
   - {fileID: 4378768503706922}
@@ -260,9 +260,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67bf25eff8648ca40b34f4acf3e1271b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 10
-  firerate: 0.5
-  bulletPrefab: {fileID: 1688112670784382, guid: 813a244018048c2478da151378b605c8,
+  range: 12
+  firerate: 0.75
+  bulletPrefab: {fileID: 1688112670784382, guid: 35e22559da7cd6a44b5daddcdb3b3b6d,
     type: 2}
   firePoint: {fileID: 4811356587704270}
   enemyTag: Enemy

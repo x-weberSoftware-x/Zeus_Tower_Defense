@@ -21,6 +21,12 @@ public class PlatformUI : MonoBehaviour
     {
         ui.SetActive(false);
     }
+
+    public void Upgrade()
+    {
+        target.UpgradeTower();
+        BuildManager.instance.DeselectPlatform();
+    }
 }
    
 
