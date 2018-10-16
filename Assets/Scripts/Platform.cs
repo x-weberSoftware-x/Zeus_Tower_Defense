@@ -60,6 +60,8 @@ public class Platform : MonoBehaviour
 
         GameObject tower = Instantiate(blueprint.towerPrefab, transform.position, transform.rotation);
         currentTower = tower;
+
+        towerBlueprint = blueprint;
     }
 
     public void UpgradeTower()
@@ -79,6 +81,13 @@ public class Platform : MonoBehaviour
         currentTower = tower;
 
         isUpgraded = true;
+    }
+
+    public void SellTower()
+    {
+        PlayerStats.souls += towerBlueprint.GetSellAmmount(isUpgraded);       
+        Destroy(currentTower);
+
     }
 
     private void OnMouseEnter()

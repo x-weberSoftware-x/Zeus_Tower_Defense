@@ -57,6 +57,7 @@ public class Enemy : MonoBehaviour
         {
             PlayerStats.worshippers -= 1;
             Destroy(gameObject);
+            WaveSpawner.EnemiesAlive--;
             return;
         }
 

@@ -19,8 +19,8 @@ public class BuildManager : MonoBehaviour
     }
     #endregion
 
-    public GameObject lightningTowerPrefab;
-    public GameObject fireTowerPrefab;
+    //public GameObject lightningTowerPrefab;
+   // public GameObject fireTowerPrefab;
 
 
     private TowerBlueprint towerToBuild;

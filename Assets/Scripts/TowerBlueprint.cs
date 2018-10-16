@@ -5,14 +5,21 @@ using UnityEngine;
 [System.Serializable]
 public class TowerBlueprint
 {
-    public GameObject towerPrefab;
-    public int cost;
+    public GameObject towerPrefab = null;
+    public int cost = 100;
 
-    public GameObject upgradePrefab;
-    public int upgradeCost;
+    public GameObject upgradePrefab = null;
+    public int upgradeCost = 60;
 
-    public int GetSellAmmount()
+    public int GetSellAmmount(bool upgraded)
     {
-        return cost / 2;
+        if(upgraded == true)
+        {
+            return (cost + upgradeCost) / 2;
+        }
+        else
+        {
+            return cost / 2;
+        }       
     }
 }
