@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour 
 {
-    public int damage = 50;
     private Transform target;
+    
+    [Header("Ice Stats")]
+    public bool iceBullet = false;
+    public float slowAmount = .6f;
+    public float slowTime = 2f;
 
+    [Header("Stats")]
+    public int damage = 50;
     public float speed = 50f;
 
     public void AimBullet(Transform _target)
@@ -39,6 +45,13 @@ public class Bullet : MonoBehaviour
     {
         Enemy enemy = target.GetComponent<Enemy>();
         enemy.TakeDamage(damage);
+
+        if(iceBullet == true && enemy.isSlow == false)
+        {
+            enemy.StartSlow(slowAmount, slowTime);
+        }
+
         Destroy(gameObject);
     }
+
 }

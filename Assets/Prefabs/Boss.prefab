@@ -151,10 +151,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 114262495668339314}
   health: 3000
-  currentHealth: 0
   soulsValue: 500
-  speed: 2.5
+  startSpeed: 2
   turningDistance: 0.3
+  isSlow: 0
 --- !u!114 &114227824561213260
 MonoBehaviour:
   m_ObjectHideFlags: 1

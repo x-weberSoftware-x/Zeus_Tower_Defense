@@ -6,6 +6,7 @@ public class Shop : MonoBehaviour
 {
     public TowerBlueprint lightningTower;
     public TowerBlueprint fireTower;
+    public TowerBlueprint iceTower;
 
     BuildManager buildManager;
 
@@ -22,5 +23,10 @@ public class Shop : MonoBehaviour
     public void SelectFireTower()
     {
         buildManager.SelectTowerToBuild(fireTower);
+    }
+
+    public void SelectIceTower()
+    {
+        buildManager.SelectTowerToBuild(iceTower);
     }
 }
