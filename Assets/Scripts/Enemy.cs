@@ -37,6 +37,7 @@ public class Enemy : MonoBehaviour
         Vector3 dir = target.position - transform.position;
         transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
         float distance = Vector3.Distance(transform.position, target.position);
+        transform.LookAt(target);
 
         if (distance < turningDistance)
         {

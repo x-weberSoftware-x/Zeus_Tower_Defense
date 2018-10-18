@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 223529126876811212}
   - component: {fileID: 114443750263850600}
   - component: {fileID: 114876789550771856}
+  - component: {fileID: 114892065130207114}
   m_Layer: 5
   m_Name: EnemyHealth
   m_TagString: Untagged
@@ -149,12 +150,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b2788e0770714a4eae53eae7b8493dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthGO: {fileID: 1090160007107844}
   healthBar: {fileID: 114262495668339314}
   health: 100
-  currentHealth: 0
   soulsValue: 10
-  speed: 3
+  startSpeed: 5
   turningDistance: 0.3
+  isSlow: 0
 --- !u!114 &114227824561213260
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -246,6 +248,17 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114892065130207114
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1090160007107844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57b7f5e748db64a478b3be0acd812d1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!136 &136196466047335088
 CapsuleCollider:
   m_ObjectHideFlags: 1
