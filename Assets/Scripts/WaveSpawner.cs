@@ -50,6 +50,7 @@ public class WaveSpawner : MonoBehaviour
             if (wave.boss != null && bossCount < 1)
             {
                 bossCount++;
+                EnemiesAlive++;
                 StartCoroutine(SpawnBoss(wave.boss, wave.bossSpawnTime));
             }
 
